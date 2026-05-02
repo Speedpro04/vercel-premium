@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Mail, Lock, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, Shield, Sun } from 'lucide-react';
 
 export const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -8,98 +8,103 @@ export const Login: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <div className="min-h-screen bg-[#091028] flex items-center justify-center p-4">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gold-500/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />
-      </div>
-
-      <div className="relative w-full max-w-md">
-        <div className="absolute inset-0 bg-gradient-to-r from-gold-500/20 to-cyan-500/20 rounded-3xl blur-2xl" />
-        <div className="relative p-8 rounded-3xl bg-[#091028]/90 backdrop-blur-2xl border border-white/10">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
-              <Sparkles size={24} className="text-[#091028]" />
+    <div className="min-h-screen bg-[#091028] flex">
+      <div className="w-[33.3333%] flex items-center justify-center p-8 border-r border-[#ffda79]/30 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#ffda79]/5 via-[#091028]/95 to-[#091028]" />
+        
+        <div className="relative z-10 w-full max-w-md space-y-6">
+          <div className="text-center space-y-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#ffda79] via-[#f0c846] to-[#ffda79] shadow-lg shadow-[#ffda79]/30 mb-4">
+              <Sun size={32} className="text-[#091028]" />
             </div>
-            <h1 className="text-3xl font-bold text-gradient">Solara</h1>
-          </div>
-
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold text-center mb-2">
-              {isLogin ? 'Bem-vindo de volta!' : 'Crie sua conta'}
-            </h2>
-            <p className="text-center text-white/60 text-sm">
-              {isLogin ? 'Acesse sua conta para continuar' : 'Comece a transformar sua clínica hoje'}
+            <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffda79] to-[#f0c846]">
+              Solara
+            </h1>
+            <p className="text-white/60 text-sm max-w-xs mx-auto">
+              Sistema seguro com criptografia de ponta a ponta. Seus dados protegidos com a mais alta tecnologia.
             </p>
           </div>
 
-          <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); navigate('/dashboard'); }}>
-            <div>
-              <label className="block text-sm text-white/70 mb-2">Email</label>
-              <div className="relative">
-                <Mail size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" />
-                <input
-                  type="email"
-                  placeholder="seu@email.com"
-                  className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-gold-500/50 focus:ring-2 focus:ring-gold-500/20 transition-all"
-                />
-              </div>
+          <div className="space-y-2">
+            <label className="text-sm text-[#ffda79]/80 font-medium">Email</label>
+            <div className="relative">
+              <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#ffda79]/50" />
+              <input
+                type="email"
+                placeholder="seu@email.com"
+                className="w-full pl-12 pr-4 py-4 rounded-xl bg-[#091028]/50 border border-[#ffda79]/30 text-white placeholder-white/30 focus:outline-none focus:border-[#ffda79]/60 focus:ring-2 focus:ring-[#ffda79]/20 transition-all"
+              />
             </div>
+          </div>
 
-            <div>
-              <label className="block text-sm text-white/70 mb-2">Senha</label>
-              <div className="relative">
-                <Lock size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" />
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  placeholder="••••••••"
-                  className="w-full pl-11 pr-12 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-gold-500/50 focus:ring-2 focus:ring-gold-500/20 transition-all"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white"
-                >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                </button>
-              </div>
+          <div className="space-y-2">
+            <label className="text-sm text-[#ffda79]/80 font-medium">Senha</label>
+            <div className="relative">
+              <Lock size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#ffda79]/50" />
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="••••••••"
+                className="w-full pl-12 pr-12 py-4 rounded-xl bg-[#091028]/50 border border-[#ffda79]/30 text-white placeholder-white/30 focus:outline-none focus:border-[#ffda79]/60 focus:ring-2 focus:ring-[#ffda79]/20 transition-all"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#ffda79]/50 hover:text-[#ffda79] transition-colors"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
             </div>
+          </div>
 
-            {isLogin && (
-              <div className="flex items-center justify-between text-sm">
-                <label className="flex items-center gap-2 text-white/60">
-                  <input type="checkbox" className="rounded border-white/20 bg-white/10" />
-                  Lembrar de mim
-                </label>
-                <a href="#" className="text-gold-400 hover:text-gold-300">Esqueceu a senha?</a>
-              </div>
-            )}
-
-            <button
-              type="submit"
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-[#091028] font-semibold hover:shadow-lg hover:shadow-gold-500/20 transition-all flex items-center justify-center gap-2"
-            >
-              {isLogin ? 'Entrar' : 'Criar Conta'}
-              <ArrowRight size={18} />
+          <div className="flex justify-end">
+            <button className="text-sm text-[#ffda79] hover:text-[#ffda79]/80 transition-colors">
+              Esqueceu a senha?
             </button>
-          </form>
+          </div>
 
-          <div className="mt-6 text-center">
+          <button
+            onClick={() => navigate('/dashboard')}
+            className="w-full py-4 rounded-xl bg-gradient-to-r from-[#ffda79] to-[#f0c846] text-[#091028] font-semibold hover:shadow-lg hover:shadow-[#ffda79]/30 transition-all"
+          >
+            {isLogin ? 'Entrar' : 'Cadastrar'}
+          </button>
+
+          <div className="text-center">
             <button
               onClick={() => setIsLogin(!isLogin)}
-              className="text-white/60 hover:text-white transition-colors"
+              className="text-sm text-white/50 hover:text-white transition-colors"
             >
-              {isLogin ? 'Não tem uma conta?' : 'Já tem uma conta?'}{' '}
-              <span className="text-gold-400 font-medium">
-                {isLogin ? 'Cadastre-se' : 'Faça login'}
+              {isLogin ? 'Não tem conta? ' : 'Já tem conta? '}
+              <span className="text-[#ffda79] font-medium">
+                {isLogin ? 'Cadastrar' : 'Entrar'}
               </span>
             </button>
           </div>
         </div>
+      </div>
 
-        <p className="text-center text-white/40 text-sm mt-6">
-          Ao continuar, você concorda com nossos Termos de Uso e Política de Privacidade.
-        </p>
+      <div className="flex-1 relative flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#ffda79]/10 via-[#091028] to-[#1a3a5c]/20" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ffda79]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ffda79]/5 rounded-full blur-3xl" />
+        
+        <div className="relative z-10 flex flex-col items-center gap-6">
+          <div className="relative">
+            <div className="absolute inset-0 bg-[#ffda79] rounded-full blur-3xl opacity-20 animate-pulse" />
+            <div className="relative p-8 rounded-3xl bg-gradient-to-br from-[#ffda79]/20 to-[#f0c846]/20 border border-[#ffda79]/30 shadow-2xl shadow-[#ffda79]/20">
+              <Lock size={180} className="text-[#ffda79] drop-shadow-lg" strokeWidth={1.5} />
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffda79] to-[#f0c846] mb-3">
+              Segurança Máxima
+            </h2>
+            <p className="text-white/60 text-lg max-w-md">
+              Seus dados protegidos com criptografia de última geração e autenticação segura.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
