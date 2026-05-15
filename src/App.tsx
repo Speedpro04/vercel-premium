@@ -28,12 +28,12 @@ function AppContent() {
 
   const getPageTitle = () => {
     switch (currentPage) {
-      case 'dashboard': return { title: 'Dashboard', subtitle: 'Visão geral da sua clínica', icon: LayoutDashboard };
-      case 'whatsapp': return { title: 'Central WhatsApp IA', subtitle: 'Atendimento inteligente em tempo real', icon: MessageSquare };
-      case 'agenda': return { title: 'Agenda Inteligente', subtitle: 'Gerenciamento automático de agendamentos', icon: Calendar };
-      case 'leads': return { title: 'Recuperação de Leads', subtitle: 'IA recuperando oportunidades perdidas', icon: TrendingUp };
-      case 'config': return { title: 'Configuração da IA', subtitle: 'Personalize sua recepcionista IA', icon: Settings };
-      default: return { title: 'Dashboard', subtitle: 'Visão geral da sua clínica', icon: LayoutDashboard };
+      case 'dashboard': return { title: 'Dashboard', subtitle: 'Gestão estratégica da sua imobiliária', icon: LayoutDashboard };
+      case 'whatsapp': return { title: 'Central WhatsApp IA', subtitle: 'Atendimento premium em tempo real', icon: MessageSquare };
+      case 'agenda': return { title: 'Agenda de Visitas', subtitle: 'Gerenciamento automático de tours e visitas', icon: Calendar };
+      case 'leads': return { title: 'Recuperação de Negócios', subtitle: 'IA recuperando vendas e locações perdidas', icon: TrendingUp };
+      case 'config': return { title: 'Configuração da IA', subtitle: 'Personalize o tom da sua secretária imobiliária', icon: Settings };
+      default: return { title: 'Dashboard', subtitle: 'Gestão estratégica da sua imobiliária', icon: LayoutDashboard };
     }
   };
 
